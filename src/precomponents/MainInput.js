@@ -1,21 +1,34 @@
 import React from 'react';
-import { TextInput, View } from 'react-native';
+import { TextInput, View, StyleSheet } from 'react-native';
 
 const MainInput = props => {
   return (
-    <View>
+    <View style={styles.inputContainer}>
       <TextInput
-        placeholer={props.placeholder}
-        placeholderTextColor="#222222"
+        placeholer="Placeholder text"
+        placeholderTextColor="red"
+        value=""
         secureTextEntry={props.secureTextEntry}
-        autoCapitalize={props.autoCapitalize}
-        autoComplete={props.autoComplete}
-        autoCorrect={props.autoCorrect}
-        autoFocus={props.autoFocus}
-        defaultValue={props.defaultValue}
+        style={styles.inputText}
       />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  inputContainer: {
+    color: '#222222',
+    height: 100,
+    width: '100%',
+    backgroundColor: '#222222',
+    padding: 20,
+  },
+  inputText: {
+    width: '100%',
+    height: '100%',
+    color: '#ededed',
+    backgroundColor: '#13abbb',
+  },
+});
 
 export { MainInput };
