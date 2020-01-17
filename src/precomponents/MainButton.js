@@ -1,24 +1,26 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { Button } from 'react-native-elements';
+import { StyleSheet, View, Text } from 'react-native';
 
 const MainButton = props => {
   return (
-    <View style={styles.buttonContainer}>
-      <Button title="Outline button" type="outline">
-        <Text style={styles.buttonText}>{props.buttonTitle} Wohoooooo</Text>
-      </Button>
+    <View style={styles.rect}>
+      <Text style={styles.login}>{props.buttonText}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    marginTop: 100,
+  rect: {
+    width: '75%',
+    height: 50,
+    backgroundColor: 'rgba(24, 1, 159, 1)',
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  buttonStyle: {},
-  buttonText: {
-    color: '#222',
+  login: {
+    color: 'rgba(255,255,255,1)',
+    fontFamily: 'Lato-Regular',
   },
 });
 

@@ -8,22 +8,16 @@ const MainHeader = props => {
     <View style={styles.viewStyle}>
       <Header
         placement="left"
-        leftComponent={{
-          icon: 'menu',
-          color: '#1a237e',
-          size: 20,
-        }}
         centerComponent={
           <View>
             <Text style={styles.headerTextStyle}>{props.headerText}</Text>
           </View>
         }
-        rightComponent={{ icon: 'home', color: '#1a237e', size: 20 }}
         containerStyle={styles.containerStyle}
         centerContainerStyle={styles.centerContainerStyle}
         ViewComponent={LinearGradient}
         linearGradientProps={{
-          colors: ['#ffffff', '#ffffff'],
+          colors: ['#3700B3', '#6200EE'],
           start: { x: 0.5, y: 0 },
           end: { x: 0.5, y: 1 },
         }}
@@ -38,15 +32,12 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   headerTextStyle: {
+    color: '#ffffff',
     fontFamily: 'Lato-Bold',
     fontSize: 20,
   },
   viewStyle: {
     flex: 1,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.9,
-    shadowRadius: 10,
   },
 });
 
