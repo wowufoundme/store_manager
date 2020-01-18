@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 import { MainInput, MainButton } from '../precomponents';
+import { emailChanged } from '../actions';
 
 class LoginForm extends Component {
   state = { email: '', password: '' };
+
+  onEmailChange(email) {
+    this.props.emailChanged(email);
+  }
 
   render() {
     return (
@@ -11,7 +17,7 @@ class LoginForm extends Component {
         <MainInput
           placeholder="Email"
           secureTextEntry={false}
-          onChangeText={email => this.setState({ email })}
+          onChangeText={this.onEmailChange.bind(this)}
           value={this.state.email}
           iconName="email"
           autoCapitalize="none"
@@ -35,4 +41,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginForm;
+export default connect(
+  null,
+  { emailChanged },
+)(LoginForm);
