@@ -51,7 +51,6 @@ class MainInput extends Component<props> {
 const styles = StyleSheet.create({
   inputContainer: {
     marginVertical: 5,
-    marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
