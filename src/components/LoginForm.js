@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { MainInput } from '../precomponents';
+import { View, StyleSheet } from 'react-native';
+import { MainInput, MainButton } from '../precomponents';
 
 class LoginForm extends Component {
   state = { email: '', password: '' };
 
   render() {
     return (
-      <View>
+      <View style={styles.loginFormContainer}>
         <MainInput
-          label="Email"
-          placeholder="user@gmail.com"
+          placeholder="Email"
           secureTextEntry={false}
           onChangeText={email => this.setState({ email })}
           value={this.state.email}
+          iconName="email"
+          autoCapitalize="none"
         />
         <MainInput
-          label="Password"
-          placeholder="***********"
+          placeholder="Password"
           secureTextEntry={true}
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
+          iconName="lock"
         />
+        <MainButton buttonText="Log in" />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  loginFormContainer: {
+    alignItems: 'center',
+  },
+});
 
 export default LoginForm;

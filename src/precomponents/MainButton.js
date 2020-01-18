@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import * as THEME from '../assets/theme';
 
 const MainButton = props => {
   return (
@@ -11,15 +12,16 @@ const MainButton = props => {
 
 const styles = StyleSheet.create({
   rect: {
-    width: '75%',
+    marginTop: 20,
+    width: '90%',
     height: 50,
-    backgroundColor: 'rgba(24, 1, 159, 1)',
-    borderRadius: 100,
+    backgroundColor: THEME.PRIMARY_COLOR_DARK,
+    borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
   },
   login: {
-    color: 'rgba(255,255,255,1)',
+    color: THEME.WHITE,
     fontFamily: 'Lato-Regular',
   },
 });
