@@ -1,13 +1,14 @@
 import React from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
+import { TextInput, View, Text, StyleSheet } from 'react-native';
 
 const MainInput = props => {
   return (
     <View style={styles.inputContainer}>
+      <Text style={styles.labelText}>{props.label}</Text>
       <TextInput
-        placeholer="Placeholder text"
-        placeholderTextColor="red"
-        value=""
+        placeholder={props.placeholder}
+        value={props.value}
+        onChangeText={props.onChangeText}
         secureTextEntry={props.secureTextEntry}
         style={styles.inputText}
       />
@@ -17,17 +18,21 @@ const MainInput = props => {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    color: '#222222',
-    height: 100,
-    width: '100%',
-    backgroundColor: '#222222',
-    padding: 20,
+    paddingVertical: 0,
+    paddingHorizontal: 15,
+    margin: 5,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 100,
+  },
+  labelText: {
+    flex: 1,
+    fontFamily: 'Lato-Regular',
   },
   inputText: {
-    width: '100%',
-    height: '100%',
-    color: '#ededed',
-    backgroundColor: '#13abbb',
+    flex: 3,
+    fontFamily: 'Lato-Regular',
   },
 });
 
